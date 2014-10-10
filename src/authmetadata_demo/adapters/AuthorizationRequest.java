@@ -58,7 +58,7 @@ public class AuthorizationRequest {
         return correctToken != null && correctToken.equals(token);
     }
     
-    public static boolean canUserSeeItemItems(String user, String[] items) {
+    public static boolean canUserSeeItems(String user, String[] items) {
         //In a real case, here the application would lookup the user authorizations 
         //on an external service (or a local cache); 
         //In this demo we simply lookup the hard-coded map 
@@ -76,6 +76,13 @@ public class AuthorizationRequest {
         
         return true;
         
+    }
+    
+    public static Set<String> getUserAuthorizations(String user) {
+        //In a real case, here the application would lookup the user authorizations 
+        //on an external service (or a local cache); 
+        //In this demo we simply lookup the hard-coded map 
+        return AUTHORIZATIONS.get(user);
     }
     
 }

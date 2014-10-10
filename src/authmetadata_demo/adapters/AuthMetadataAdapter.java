@@ -11,32 +11,6 @@ import com.lightstreamer.interfaces.metadata.TableInfo;
 
 public class AuthMetadataAdapter extends LiteralBasedProvider {
     
-    @Override 
-    public void notifyNewTables(java.lang.String user, java.lang.String sessionID, TableInfo[] tables) throws NotificationException, CreditsException {
-        //A user is subscribing to one or more items, we have to verify if he is authorized to
-        //see what he's asking for. This task might be performing by checking an external service
-        //or a local cache. If a service has to be queried it is, in most cases, better to query it
-        //beforehand in the notifyNewSession method, and cache the result, that can be then discarded in 
-        //the notifySessionClose, if no other sessions are still open for that user (avoid such lookup
-        //in response to a notifyUser call, as there is no guarantee that the notifyUser will be followed 
-        //by a notifyNewSession although it quite always is). 
-        //This demo does not actually perform the request, user authorizations are hardcoded in the 
-        //AuthorizationRequest class
-        
-        for (int i=0; i<tables.length; i++) {
-            String[] items;
-            try {
-                items = this.getItems(user, tables[i].getId());
-            } catch (ItemsException e) {
-                throw new NotificationException("Error resolving item names");
-            }
-            
-            
-            if (!AuthorizationRequest.canUserSeeItemItems(user, items)) {
-                throw new CreditsException(-1, "User not authorized", "You are not authorized to see this item"); 
-            }
-        }
-    }
     
     @Override 
     public void notifyUser(String user, String token, Map httpHeaders) throws AccessException {
@@ -51,9 +25,9 @@ public class AuthMetadataAdapter extends LiteralBasedProvider {
             throw new AccessException("Invalid user/token");
         }
         
-        //NOTE: since we have to block in order to perform the lookup for the client we have 
+        //NOTE: since we might have to block in order to perform the lookup for the client, we have 
         //configured a dedicated pool thread for authorization in the adapters.xml configuration
-        //file for this adapter. You might want to speed up things using a local cache.       
+        //file for this adapter. You might want to speed up things using a local cache.
         
         //NOTE: it is common practice for a webserver to place its session token inside a cookie;
         //if the cookie,the JS client library, and the Lightstreamer server are properly configured, 
@@ -65,7 +39,33 @@ public class AuthMetadataAdapter extends LiteralBasedProvider {
     @Override
     public boolean wantsTablesNotification(String user) {
         //We might return false if the user is authorized to subscribe to all the items.
-        //To keep it simple we always return true
+        //In this case we always return true
         return true;
+    }
+    
+    @Override 
+    public void notifyNewTables(java.lang.String user, java.lang.String sessionID, TableInfo[] tables) throws NotificationException, CreditsException {
+        //A user is subscribing to one or more items, we have to verify if he is authorized to
+        //see what he's asking for. This task might be performing by checking an external service
+        //or a local cache. If a service has to be queried it is, in most cases, better to query it
+        //beforehand in the notifyNewSession method. This class assumes such info has been cached 
+        //somewhere else, on the other hand the AuthMetadataAdapterWithAuthCache class (available in 
+        //this package) takes a step further and shows the cache-during-notifyNewSession approach.
+        //In any case this demo does not actually perform the request, as user authorizations are 
+        //hardcoded in the AuthorizationRequest class. 
+        
+        for (int i=0; i<tables.length; i++) {
+            String[] items;
+            try {
+                items = this.getItems(user, tables[i].getId());
+            } catch (ItemsException e) {
+                throw new NotificationException("Error resolving item names");
+            }
+            
+            
+            if (!AuthorizationRequest.canUserSeeItems(user, items)) {
+                throw new CreditsException(-1, "User not authorized", "You are not authorized to see this item"); 
+            }
+        }
     }
 }
