@@ -29,7 +29,7 @@ public class AuthMetadataAdapterWithAuthCache extends AuthMetadataAdapter {
         //already available, and, if not, query the external service to create one.
         
         //we save the sessionId->user association to use it in the notifySessionClose method.
-        sessionToUser.put(user,sessionID);
+        sessionToUser.put(sessionID,user);
         
         //First we check for the cache object and if needed we create one. 
         UserAuthorizations userCache;
