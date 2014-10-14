@@ -84,8 +84,8 @@ public class AuthMetadataAdapterWithAuthCache extends AuthMetadataAdapter {
             throw new CreditsException(-2, "Can't find cache for this user", "You are not authorized to see this item"); 
         }
         
-        Set<String> authoriziations = userCache.getAuthorizations();
-        if(authoriziations == null) {
+        Set<String> authorizations = userCache.getAuthorizations();
+        if(authorizations == null) {
             throw new CreditsException(-3, "User has no authorizations/authorization caching failed", "You are not authorized to see this item"); 
         }
         
@@ -98,7 +98,7 @@ public class AuthMetadataAdapterWithAuthCache extends AuthMetadataAdapter {
             }
             
             for (int j=0; j<items.length; j++) {
-                if (!authoriziations.contains(items[j])) {
+                if (!authorizations.contains(items[j])) {
                     throw new CreditsException(-3, "User not authorized", "You are not authorized to see this item"); 
                 }
             }
