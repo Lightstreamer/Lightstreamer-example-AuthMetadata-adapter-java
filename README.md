@@ -119,17 +119,17 @@ To build your own version of `LS_Auth_demo.jar`, instead of using the one provid
 * If using Lightstreamer Server 6.0 beta 1 or an older version also get the `ls-generic-adapters.jar` file from the Lightstreamer Distribution and
 copy it into the `lib` directory.
 * Assuming javac and jar are available on the path, from the command line run:
-      ```sh
-      javac -classpath ./lib/ls-adapter-interface.jar -d ./classes ./src/authmetadata_demo/adapters/*.java
-      ```
-or, if  you had to copy `ls-generic-adapters.jar`:
-      ```sh
-      javac -classpath ./lib/ls-adapter-interface.jar;./lib/ls-generic-adapters.jar -d ./classes ./src/authmetadata_demo/adapters/*.java
-      ```
+  ```sh
+  > javac -classpath ./lib/ls-adapter-interface.jar -d ./classes ./src/authmetadata_demo/adapters/*.java
+  ```
+  or, if  you had to copy `ls-generic-adapters.jar`:
+  ```sh
+  > javac -classpath ./lib/ls-adapter-interface.jar;./lib/ls-generic-adapters.jar -d ./classes ./src/authmetadata_demo/adapters/*.java
+  ```
 * Then create the jar:
-      ```sh
-      jar cvf LS_Auth_demo.jar -C classes ./
-      ```
+  ```sh
+  > jar cvf LS_Auth_demo.jar -C classes ./
+  ```
 * Copy the just compiled `LS_Auth_demo.jar` in the `adapters/AuthDemo/lib` folder of your Lightstreamer Server installation.
 * At this point you have to obtain the `LS_StockListDemo_DataAdapter.jar` and `LS_quote_feed_simulator.jar` files, and copy 
 them into the same `adapters/AuthDemo/lib` folder: head to the 
