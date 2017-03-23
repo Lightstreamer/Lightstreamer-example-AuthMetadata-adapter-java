@@ -6,7 +6,7 @@ Web/Application Server is involved in the process.
 This project includes a simple MetadataProvider implementation that includes user validation and items authorization logics.
 
 
-##Details
+## Details
 
 This *Authentication and Authorization Demo* illustrates the typical best practice used for Lightstreamer Web applications, when a Web/Application server is involved in the process. 
 The actual authentication is usually handled by the legacy Web/Application server, irrespective of Lightstreamer. 
@@ -98,7 +98,7 @@ You can easily expand your configurations using the generic template, `DOCS-SDKs
 <br>
 Please refer [here](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf) for more details about Lightstreamer Adapters.
 
-##Install 
+## Install 
 
 If you want to install this Demo in your local Lightstreamer Server, follow these steps.
 
