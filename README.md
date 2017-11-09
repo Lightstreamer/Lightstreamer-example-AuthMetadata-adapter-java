@@ -77,7 +77,7 @@ The `adapters.xml` file for the *Authentication and Authorization Demo*, should 
 
         <!-- use a dedicated pool for notifyUser call, see source code of AuthMetadataAdapter -->
         <authentication_pool>
-            <max_size>10</max_size>
+            <max_size>1000</max_size>
             <max_free>0</max_free>
         </authentication_pool>
         
