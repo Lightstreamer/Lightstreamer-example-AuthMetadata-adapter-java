@@ -140,7 +140,7 @@ the instructions there.
 
 ### Clients Using This Adapter
 
-[Follow this link for a list of clients for this adapter](https://github.com/Weswit?query=Lightstreamer-example-authmetadata-client)
+[Follow this link for a list of clients for this adapter](https://github.com/Lightstreamer?utf8=%E2%9C%93&q=Lightstreamer-example-authmetadata-client)
 
 ### Related Projects
 
