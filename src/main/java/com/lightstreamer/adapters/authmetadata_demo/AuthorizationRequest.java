@@ -1,4 +1,4 @@
-package authmetadata_demo.adapters;
+package com.lightstreamer.adapters.authmetadata_demo;
 
 import java.util.Collections;
 import java.util.Set;
