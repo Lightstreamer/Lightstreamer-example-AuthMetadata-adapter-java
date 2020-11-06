@@ -105,36 +105,24 @@ If you want to install this Demo in your local Lightstreamer Server, follow thes
 * Download Lightstreamer Server (Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from Lightstreamer Download page, 
 and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
 * Make sure that Lightstreamer Server is not running.
-* Get the deploy.zip file, from the releases of this project, unzip it, go to the Deployment_LS folder and copy the AuthDemo folder into the adapters 
+* Get the deploy.zip file, from the releases of this project, unzip it, and copy the `AuthDemo` folder into the `adapters`
 folder of your Lightstreamer Server installation.
 * Launch Lightstreamer Server.
 
 ## Build
 
-To build your own version of `LS_Auth_demo.jar`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-java#install) section above, follow these steps.
+To build your own version of `example-AuthMetadata-adapter-java-0.0.1-SNAPSHOT.jar` instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Lightstreamer/Lightstreamer-example-AuthMetadata-adapter-java#install) section above, you have two options:
+either use [Maven](https://maven.apache.org/) (or other build tools) to take care of dependencies and building (recommended) or gather the necessary jars yourself and build it manually.
+For the sake of simplicity only the Maven case is detailed here.
 
-* Download this project.
-* Get the `ls-adapter-interface.jar` file from the [latest Lightstreamer distribution](http://www.lightstreamer.com/download), and copy it into the 
-`lib` directory.
-* If using Lightstreamer Server 6.0 beta 1 or an older version also get the `ls-generic-adapters.jar` file from the Lightstreamer Distribution and
-copy it into the `lib` directory.
-* Assuming javac and jar are available on the path, from the command line run:
-  ```sh
-  > javac -classpath ./lib/ls-adapter-interface.jar -d ./classes ./src/authmetadata_demo/adapters/*.java
-  ```
-  or, if  you had to copy `ls-generic-adapters.jar`:
-  ```sh
-  > javac -classpath ./lib/ls-adapter-interface.jar;./lib/ls-generic-adapters.jar -d ./classes ./src/authmetadata_demo/adapters/*.java
-  ```
-* Then create the jar:
-  ```sh
-  > jar cvf LS_Auth_demo.jar -C classes ./
-  ```
-* Copy the just compiled `LS_Auth_demo.jar` in the `adapters/AuthDemo/lib` folder of your Lightstreamer Server installation.
-* At this point you have to obtain the `LS_StockListDemo_DataAdapter.jar` and `LS_quote_feed_simulator.jar` files, and copy 
-them into the same `adapters/AuthDemo/lib` folder: head to the 
-[Stock-List Demo - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-StockList-adapter-java) project and follow
-the instructions there.
+### Maven
+
+You can easily build and run this application using Maven through the pom.xml file located in the root folder of this project. As an alternative, you can use an alternative build tool (e.g. Gradle, Ivy, etc.) by converting the provided pom.xml file.
+
+Assuming Maven is installed and available in your path you can build the demo by running
+```sh 
+ mvn install dependency:copy-dependencies 
+```
 
 ## See Also
 
@@ -148,4 +136,5 @@ the instructions there.
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Lightstreamer SDK for Java In-Process Adapters since 5.1
+- Compatible with Lightstreamer SDK for Java In-Process Adapters since 7.3.
+- For a version of this example compatible with Lightstreamer SDK for Java Adapters version 6.0, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-AuthMetadata-adapter-java/tree/first-release).
