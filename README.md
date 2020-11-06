@@ -105,7 +105,7 @@ If you want to install this Demo in your local Lightstreamer Server, follow thes
 * Download Lightstreamer Server (Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from Lightstreamer Download page, 
 and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
 * Make sure that Lightstreamer Server is not running.
-* Get the deploy.zip file, from the releases of this project, unzip it, and copy the `AuthDemo` folder into the `adapters`
+* Get the `deploy.zip` file from the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-AuthMetadata-adapter-java/releases), unzip it, and copy the `AuthDemo` folder into the `adapters`
 folder of your Lightstreamer Server installation.
 * Launch Lightstreamer Server.
 
