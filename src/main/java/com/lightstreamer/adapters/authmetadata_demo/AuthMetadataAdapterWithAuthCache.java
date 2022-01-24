@@ -90,13 +90,8 @@ public class AuthMetadataAdapterWithAuthCache extends AuthMetadataAdapter {
         }
         
         for (int i=0; i<tables.length; i++) {
-            String[] items;
-            try {
-                items = this.getItems(user, tables[i].getId());
-            } catch (ItemsException e) {
-                throw new NotificationException("Error resolving item names");
-            }
-            
+            String[] items = tables[i].getSubscribedItems();
+
             for (int j=0; j<items.length; j++) {
                 if (!authorizations.contains(items[j])) {
                     throw new CreditsException(-3, "User not authorized", "You are not authorized to see this item"); 

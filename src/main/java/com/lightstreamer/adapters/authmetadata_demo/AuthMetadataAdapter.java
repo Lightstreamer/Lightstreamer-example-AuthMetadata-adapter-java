@@ -55,14 +55,8 @@ public class AuthMetadataAdapter extends LiteralBasedProvider {
         //hardcoded in the AuthorizationRequest class. 
         
         for (int i=0; i<tables.length; i++) {
-            String[] items;
-            try {
-                items = this.getItems(user, tables[i].getId());
-            } catch (ItemsException e) {
-                throw new NotificationException("Error resolving item names");
-            }
-            
-            
+            String[] items = tables[i].getSubscribedItems();
+
             if (!AuthorizationRequest.canUserSeeItems(user, items)) {
                 throw new CreditsException(-1, "User not authorized", "You are not authorized to see this item"); 
             }
