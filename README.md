@@ -94,9 +94,9 @@ The `adapters.xml` file for the *Authentication and Authorization Demo*, should 
 ```
 
 <i>NOTE: not all configuration options of an Adapter Set are exposed by the file suggested above. 
-You can easily expand your configurations using the generic template, see the [Java In-Process Adapter Interface Project](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess/tree/v7.4.1#configuration) for details.</i><br>
+You can easily expand your configurations using the generic template, see the [Java In-Process Adapter Interface Project](https://github.com/Lightstreamer/Lightstreamer-lib-adapter-java-inprocess#configuration) for details.</i><br>
 <br>
-Please refer [here](https://lightstreamer.com/docs/ls-server/latest_7_3/General%20Concepts.pdf) for more details about Lightstreamer Adapters.
+Please refer [here](https://lightstreamer.com/docs/ls-server/latest/General%20Concepts.pdf) for more details about Lightstreamer Adapters.
 
 ## Install 
 
@@ -105,7 +105,7 @@ If you want to install this Demo in your local Lightstreamer Server, follow thes
 * Download Lightstreamer Server (Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from Lightstreamer Download page, 
 and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
 * Make sure that Lightstreamer Server is not running.
-* Get the `deploy.zip` file from the ["Release for Lightstreamer 7.3" release](https://github.com/Lightstreamer/Lightstreamer-example-AuthMetadata-adapter-java/releases), unzip it, and copy the `AuthDemo` folder into the `adapters`
+* Get the `deploy.zip` file from the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-AuthMetadata-adapter-java/releases), unzip it, and copy the `AuthDemo` folder into the `adapters`
 folder of your Lightstreamer Server installation.
 * Launch Lightstreamer Server.
 
@@ -136,5 +136,6 @@ Assuming Maven is installed and available in your path you can build the demo by
 
 ## Lightstreamer Compatibility Notes
 
-- Compatible with Lightstreamer SDK for Java In-Process Adapters version 7.3 to 7.4.
+- Compatible with Lightstreamer SDK for Java In-Process Adapters since version 8.0.
+- For a version of this example compatible with Lightstreamer SDK for Java Adapters versions 7.3 to 7.4, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-AuthMetadata-adapter-java/tree/last_for_interface_7.4.x).
 - For a version of this example compatible with Lightstreamer SDK for Java Adapters version 6.0, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-AuthMetadata-adapter-java/tree/first-release).
