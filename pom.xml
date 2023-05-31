@@ -4,7 +4,7 @@
 
   <groupId>com.lightstreamer</groupId>
   <artifactId>example-AuthMetadata-adapter-java</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>example-AuthMetadata-adapter-java</name>
@@ -61,7 +61,7 @@
     <dependency>
       <groupId>com.lightstreamer</groupId>
       <artifactId>ls-adapter-inprocess</artifactId>
-      <version>7.3.0</version>
+      <version>8.0.0</version>
     </dependency>
   </dependencies>
   

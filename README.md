@@ -75,10 +75,10 @@ The `adapters.xml` file for the *Authentication and Authorization Demo*, should 
     
         <adapter_class>authmetadata_demo.adapters.AuthMetadataAdapter</adapter_class>
 
-        <!-- use a dedicated pool for notifyUser call, see source code of AuthMetadataAdapter -->
+        <!-- configure the dedicated pool for notifyUser call, see source code of AuthMetadataAdapter -->
         <authentication_pool>
-            <max_size>1000</max_size>
-            <max_free>10</max_free>
+            <max_pending_requests>100</max_pending_requests>
+            <max_queue>100</max_queue>
         </authentication_pool>
         
     </metadata_provider>
