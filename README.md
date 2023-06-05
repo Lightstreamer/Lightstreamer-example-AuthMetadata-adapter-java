@@ -73,7 +73,7 @@ The `adapters.xml` file for the *Authentication and Authorization Demo*, should 
 
     <metadata_provider>
     
-        <adapter_class>authmetadata_demo.adapters.AuthMetadataAdapter</adapter_class>
+        <adapter_class>com.lightstreamer.adapters.authmetadata_demo.AuthMetadataAdapter</adapter_class>
 
         <!-- configure the dedicated pool for notifyUser call, see source code of AuthMetadataAdapter -->
         <authentication_pool>
@@ -86,7 +86,7 @@ The `adapters.xml` file for the *Authentication and Authorization Demo*, should 
     <data_provider name="QUOTE_ADAPTER">
     
         <!-- this class is taken from the Stock-List Demo - Java Adapter project-->
-        <adapter_class>stocklist_demo.adapters.StockQuotesDataAdapter</adapter_class>
+        <adapter_class>com.lightstreamer.examples.stocklist_demo.adapters.StockQuotesDataAdapter</adapter_class>
         
     </data_provider>
 
