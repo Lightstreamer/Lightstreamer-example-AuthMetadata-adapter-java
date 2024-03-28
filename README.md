@@ -35,7 +35,7 @@ if (!AuthorizationRequest.isValidToken(user, token)) {
 
 This demo also implements Authorization handling of item subscription requests.
 Every time a subscription is issued, the adapter verifies if the user issuing the request is actually authorized to subscribe to the selected item(s).
-Again, a real case might query an external service to verify the user authorizations; this demo example simply checks on an hard-coded list
+Again, a real case might query an external service to verify the user authorizations; this demo example simply checks on a hard-coded list
 
 from `src/authmetadata_demo/adapters/AuthMetadataAdapter.java`:
 ```java
@@ -52,7 +52,7 @@ Querying an external service at subscription time is a discouraged approach thou
 it is suggested to use the approach shown in the `AuthMetadataAdapterWithAuthCache` class where authorizations are queried at session startup and cached
 in the adapter.
 
-More details and comments on how the auth/auth cycle is accomplished is available in the source code of the application.
+More details and comments on how the auth/auth cycle is accomplished are available in the source code of the application.
 
 
 ### The Adapter Set Configuration
@@ -64,7 +64,7 @@ the alternative version.
 * The project relies on the StockQuotesDataAdapter class as DataProvider implementation. This class is part of the 
 [Stock-List Demo - Java Adapter](https://github.com/Lightstreamer/Lightstreamer-example-StockList-adapter-java) project.
 
-The `adapters.xml` file for the *Authentication and Authorization Demo*, should look like:
+The `adapters.xml` file for the *Authentication and Authorization Demo*, should look like this:
 
 ```xml      
 <?xml version="1.0"?>
@@ -111,9 +111,9 @@ folder of your Lightstreamer Server installation.
 
 ## Build
 
-To build your own version of `example-AuthMetadata-adapter-java-x.y.z-SNAPSHOT.jar` instead of using the one provided in the `deploy.zip` file from the [Install](#install) section above, you have two options:
+To build your own version of `example-authmetadata-adapter-java-x.y.z.jar` instead of using the one provided in the `deploy.zip` file from the [Install](#install) section above, you have two options:
 either use [Maven](https://maven.apache.org/) (or other build tools) to take care of dependencies and building (recommended) or gather the necessary jars yourself and build it manually.
-For the sake of simplicity only the Maven case is detailed here.
+For the sake of simplicity, only the Maven case is detailed here.
 
 ### Maven
 
