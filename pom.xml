@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.lightstreamer</groupId>
-  <artifactId>example-AuthMetadata-adapter-java</artifactId>
+  <artifactId>example-authmetadata-adapter-java</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -42,6 +42,14 @@
          
     </plugins>
   </build>
+  
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Lightstreamer Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/Lightstreamer/Lightstreamer-example-AuthMetadata-adapter-java</url>
+    </repository>
+  </distributionManagement>
   
   <dependencies>
     <dependency>
